@@ -1,0 +1,65 @@
+name:               free-th
+version:            0.0.1
+license:            BSD3
+license-file:       etc/LICENCE.md
+author:             Dom De Re
+maintainer:         Dom De Re
+copyright:          Copyright (C) 2014
+synopsis:           Template Haskell for generating Free Monads from Functors
+category:           Control
+description:        Template Haskell for generating Free Monads from Functors
+homepage:           https://github.com/domdere/free-th
+bug-reports:        https://github.com/domdere/free-th/issues
+cabal-version:      >= 1.10
+build-type:         Custom
+--extra-source-files: etc/CONTRIBUTORS,
+--                    etc/CREDITS
+
+source-repository       head
+    type:               git
+    location:           https://github.com/domdere/free-th
+
+flag                    small_base
+    description:        Choose the new, split-up base package.
+
+library
+    default-language:   Haskell2010
+
+    build-depends:      base < 5 && >= 4
+                        , HUnit
+                        , containers
+                        , array
+
+    ghc-options:        -Wall
+                        -fno-warn-unused-imports
+                        -fno-warn-unused-binds
+                        -fno-warn-unused-do-bind
+                        -fno-warn-type-defaults
+
+    hs-source-dirs:     src
+
+    exposed-modules:
+
+test-suite              doctests
+    type:
+                        exitcode-stdio-1.0
+
+    main-is:
+                        Main.hs
+
+    default-language:
+                        Haskell2010
+
+    build-depends:
+                        base < 5 && >= 3,
+                        doctest >= 0.9.7,
+                        filepath >= 1.3,
+                        directory >= 1.1,
+                        QuickCheck >= 2.0
+
+    ghc-options:
+                        -Wall
+                        -threaded
+
+    hs-source-dirs:
+                        doctests

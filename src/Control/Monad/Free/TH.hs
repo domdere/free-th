@@ -1,0 +1,13 @@
+---------------------------------------------------------------------------------
+-- |
+-- Module       : Control.Monad.Free.TH
+-- Copyright    : (C) 2014 Dom De Re
+-- License      : BSD-style (see the file etc/LICENSE.md)
+-- Maintainer   : Dom De Re
+--
+-- Template Haskell functions for generating Free Monads
+-- from Functors written in a specific way.
+--
+-- See <http://www.haskellforall.com/2012/07/purify-code-using-free-monads.html>
+---------------------------------------------------------------------------------
+module Control.Monad.Free.TH where

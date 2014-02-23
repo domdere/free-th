@@ -26,9 +26,10 @@ library
     default-language:   Haskell2010
 
     build-depends:      base < 5 && >= 4
-                        , HUnit
                         , containers
                         , array
+                        , free              == 4.*
+                        , template-haskell  == 2.8.*
 
     ghc-options:        -Wall
                         -fno-warn-unused-imports
@@ -38,7 +39,9 @@ library
 
     hs-source-dirs:     src
 
-    exposed-modules:
+    exposed-modules:    Control.Monad.Free.TH
+
+    other-modules:      Control.Monad.Free.TH.Types
 
 test-suite              doctests
     type:
@@ -51,11 +54,12 @@ test-suite              doctests
                         Haskell2010
 
     build-depends:
-                        base < 5 && >= 3,
-                        doctest >= 0.9.7,
-                        filepath >= 1.3,
-                        directory >= 1.1,
-                        QuickCheck >= 2.0
+                        base < 5 && >= 3
+                    ,   doctest >= 0.9.7
+                    ,   filepath >= 1.3
+                    ,   directory >= 1.1
+                    ,   QuickCheck >= 2.0
+                    ,   mtl
 
     ghc-options:
                         -Wall

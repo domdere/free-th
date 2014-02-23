@@ -1,4 +1,4 @@
-# free-th
+# Free TH
 
 Template Haskell for generating Free Monads from Functors
 
